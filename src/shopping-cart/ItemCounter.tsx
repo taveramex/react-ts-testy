@@ -7,16 +7,24 @@ const sectionStylo:CSSProperties = {
     marginTop: 10,
 }
 
-export const ItemCounter = () => {
+export interface ItemCounterProps{
+    id:number,
+    productName: string,
+    quantity: number,
+    price: number,
+}
+
+export const ItemCounter = ({productName:name, quantity}:ItemCounterProps) => {
     return (
         <section style={sectionStylo}>
+
             <span style={{
                 width:150
             }}>
-                Nintendo Switch 2
+                {name}
             </span>
             <button>+1</button>
-            <span>10</span>
+            <span>{quantity}</span>
             <button>-1</button>
         </section>
     )

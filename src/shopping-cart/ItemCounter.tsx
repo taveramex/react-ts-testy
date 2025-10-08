@@ -1,5 +1,5 @@
 import { CSSProperties, useState } from 'react'
-import "./ItemCounter.css"
+import styles from "./ItemCounter.module.css"
 
 export interface ItemCounterProps{
     id?:number,
@@ -21,9 +21,9 @@ export const ItemCounter = ({productName:name, quantity=1}:ItemCounterProps) => 
     }
 
     return (
-        <section className="item-counter">
+        <section className={styles.itemCounter}>
 
-            <span className="w150" style={colorLow}>
+            <span className={styles.w150} style={colorLow}>
                 {name}
             </span>
             <button onClick = {handleAdd}>+1</button>

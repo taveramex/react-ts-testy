@@ -15,9 +15,7 @@ export const ShopChop = () => {
       <h1>welcome to some shady shop to chop</h1>
       <p>heres our products</p>
 
-      { products.map((item)=>{
-        return <ItemCounter {...item}/>
-      })}
+      { products.map(({id:key, productName:name, quantity}) => (<ItemCounter key={key} productName={name} quantity={quantity} /> )) }
     
     </>
   )

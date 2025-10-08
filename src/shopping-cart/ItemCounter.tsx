@@ -1,31 +1,34 @@
-import React, { CSSProperties } from 'react'
-
-const sectionStylo:CSSProperties = {
-    display: 'flex',
-    alignItems : 'center',
-    gap: 10,
-    marginTop: 10,
-}
+import { CSSProperties, useState } from 'react'
+import "./ItemCounter.css"
 
 export interface ItemCounterProps{
-    id:number,
+    id?:number,
     productName: string,
-    quantity: number,
-    price: number,
+    quantity?: number,
+    price?: number,
 }
 
-export const ItemCounter = ({productName:name, quantity}:ItemCounterProps) => {
-    return (
-        <section style={sectionStylo}>
+export const ItemCounter = ({productName:name, quantity=1}:ItemCounterProps) => {
+    const [count, setCount] = useState(quantity);
+    const handleAdd = () => (setCount(count+1));
+    const handleMinus = ()=> {
+        if(count === 0) return;
+        setCount(count-1)
+    };
+    const colorLow:CSSProperties = {
+        color : (count===0)? 'red' : 'black',
 
-            <span style={{
-                width:150
-            }}>
+    }
+
+    return (
+        <section className="item-counter">
+
+            <span className="w150" style={colorLow}>
                 {name}
             </span>
-            <button>+1</button>
-            <span>{quantity}</span>
-            <button>-1</button>
+            <button onClick = {handleAdd}>+1</button>
+            <span>{count}</span>
+            <button onClick={handleMinus}>-1</button>
         </section>
     )
 }

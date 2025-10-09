@@ -15,6 +15,7 @@ function App() {
 
       <h1>Test App Component</h1>
       <div>This is a Test App to create stuff and learn</div>
+      <div data-testid="testingTest">just some test giberish</div>
       {isActive ? <MyCoolApp /> : <span>not cool App</span>}
 
       <p style={{

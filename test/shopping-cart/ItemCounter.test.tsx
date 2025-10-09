@@ -6,7 +6,6 @@ import App from "../../src/App"
 describe("ItemCounter", () => {
     test("renders correctly", () => {
         render(<App />)
-        screen.debug();
     });
     test("Verify Title", () => {
         const { container } = render(<App />);

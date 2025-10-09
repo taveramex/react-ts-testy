@@ -1,0 +1,11 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`App > match dataTestid Snapshot 1`] = `
+<div
+  data-testid="testingTest"
+>
+  just some test giberish
+</div>
+`;
+
+exports[`App > match whole component Snapshot 1`] = `"<h1>Test App Component</h1><div>This is a Test App to create stuff and learn</div><div data-testid="testingTest">just some test giberish</div><span>not cool App</span><p style="color: red; background-color: rgb(250, 250, 250); border-radius: 0;">this is awful to format style</p><p style="background-color: red; color: green; margin-top: 30px;">other aberration to see but a little less awful</p>"`;

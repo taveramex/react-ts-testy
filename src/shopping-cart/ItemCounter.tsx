@@ -10,7 +10,7 @@ export interface ItemCounterProps{
 
 export const ItemCounter = ({productName:name, quantity=1}:ItemCounterProps) => {
     const [count, setCount] = useState(quantity);
-    const handleAdd = () => (setCount(count+1));
+    const handleAdd = () => (setCount(count+1));    
     const handleMinus = ()=> {
         if(count === 0) return;
         setCount(count-1)
@@ -27,7 +27,7 @@ export const ItemCounter = ({productName:name, quantity=1}:ItemCounterProps) => 
                 {name}
             </span>
             <button onClick = {handleAdd}>+1</button>
-            <span>{count}</span>
+            <span data-testid="data-qty">{count}</span>
             <button onClick={handleMinus}>-1</button>
         </section>
     )

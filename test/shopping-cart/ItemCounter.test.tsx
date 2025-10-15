@@ -10,8 +10,6 @@ describe("ItemCounter", () => {
         render(<ItemCounter productName={testName}/>);
 
         expect(screen.getByText(testName)).toBeDefined();
-
-        screen.debug();
     });
     test('check default value of 1',()=>{
         render(<ItemCounter productName="test"/>);
@@ -42,6 +40,15 @@ describe("ItemCounter", () => {
         fireEvent.click(minusBtn);
         expect(screen.getByTestId('data-qty').innerHTML).toBe( ""+(testQty));
     });
-
+    test("should change color when quantity is 0", () => {
+        const testQty = 1;
+        const productName='test tinga';
+        render(<ItemCounter productName={productName} quantity={testQty}/>);
+        const textBlack = screen.getByTestId('data-txt');
+        expect(textBlack.style.color).toBe("black");
+        const [,minusBtn] = screen.getAllByRole('button');
+        fireEvent.click(minusBtn);
+        expect(textBlack.style.color).toBe("red");
+    });
     
 }); 

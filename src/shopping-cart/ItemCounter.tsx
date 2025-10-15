@@ -23,7 +23,7 @@ export const ItemCounter = ({productName:name, quantity=1}:ItemCounterProps) => 
     return (
         <section className={styles.itemCounter}>
 
-            <span className={styles.w150} style={colorLow}>
+            <span data-testid="data-txt" className={styles.w150} style={colorLow}>
                 {name}
             </span>
             <button onClick = {handleAdd}>+1</button>

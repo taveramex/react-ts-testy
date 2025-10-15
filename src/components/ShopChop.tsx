@@ -9,7 +9,7 @@ const products:ItemCounterProps[] = [
   {id:6, productName:'Pez', quantity:231, price:15},
 ]
 
-export const ShopChop = () => {
+const ShopChop = () => {
   return (
     <>
       <h1>welcome to some shady shop to chop</h1>
@@ -20,3 +20,5 @@ export const ShopChop = () => {
     </>
   )
 }
+
+export default ShopChop;
